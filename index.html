@@ -305,6 +305,7 @@
       }
       .frame img {
         width: 100%;
+        height: auto;
         display: block;
       }
 
@@ -401,35 +402,6 @@
         margin: 0;
         color: var(--ink-2);
         font-size: 0.95rem;
-      }
-
-      /* ---- gallery ---- */
-      .gallery {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr;
-        gap: 18px;
-      }
-      @media (max-width: 760px) {
-        .gallery {
-          grid-template-columns: 1fr;
-        }
-      }
-      .shot {
-        border: 1px solid var(--line);
-        border-radius: var(--radius);
-        overflow: hidden;
-        background: var(--panel);
-        box-shadow: 0 24px 70px -40px rgba(0, 0, 0, 0.85);
-      }
-      .shot .cap {
-        padding: 14px 18px;
-        border-top: 1px solid var(--line);
-        font-size: 0.9rem;
-        color: var(--ink-2);
-      }
-      .shot .cap b {
-        color: var(--ink);
-        font-weight: 600;
       }
 
       /* ---- pricing ---- */
@@ -660,13 +632,13 @@
           <div class="frame">
             <div class="frame-bar">
               <span></span><span></span><span></span
-              ><span class="cap">ROM Revver — 3D surface view</span>
+              ><span class="cap">ROM Revver — a live RX-8 workspace</span>
             </div>
             <img
-              src="assets/shot-3d.png"
-              alt="ROM Revver showing a fuel table as an interactive 3D surface with a categorized table tree"
-              width="1000"
-              height="720"
+              src="assets/shot-hero.png"
+              alt="ROM Revver editing a real RX-8 calibration: a heatmapped Engine Torque table, a colourful 3D surface, and multiple dockable table panels beside a categorized table tree"
+              width="2560"
+              height="1600"
               loading="eager"
             />
           </div>
@@ -747,40 +719,6 @@
                 definitions — they're never bundled.
               </p>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- GALLERY -->
-      <section style="padding-top: 0">
-        <div class="wrap">
-          <div class="gallery">
-            <figure class="shot" style="margin: 0">
-              <img
-                src="assets/shot-workspace.png"
-                alt="ROM Revver workspace with a categorized table tree, dockable panels, and a workspace-wide heatmap"
-                width="1200"
-                height="620"
-                loading="lazy"
-              />
-              <figcaption class="cap">
-                <b>A workspace, not a window.</b> Dockable, rearrangeable panels and a dense,
-                categorized tree — see many tables at once.
-              </figcaption>
-            </figure>
-            <figure class="shot" style="margin: 0">
-              <img
-                src="assets/shot-scheme.png"
-                alt="ROM Revver in a dark theme with a blue accent colour scheme"
-                width="1100"
-                height="560"
-                loading="lazy"
-              />
-              <figcaption class="cap">
-                <b>Make it yours.</b> Selectable colour schemes and a dark, data-dense interface
-                designed to stay out of your way.
-              </figcaption>
-            </figure>
           </div>
         </div>
       </section>
