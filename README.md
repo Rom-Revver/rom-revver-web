@@ -30,7 +30,12 @@ the deploy workflow **creates `main` on its first run**, so do these in order:
 
 ## Before public launch
 
-- Confirm provisional pricing copy ($20 Pro / $8 renewal).
+- Confirm provisional pricing copy ($20 Pro, one-time — **no renewal**; the $8
+  renewal was withdrawn 2026-08-14, decision-log
+  `pro-license-single-purchase-no-renewal`).
+- **The "Buy Pro" button is LIVE** (a real Stripe Payment Link that takes real
+  money). Before public launch: confirm `LWF-31` automated fulfilment is
+  deployed, then drop the "issued by hand" note from the Pro card.
 - Add the real download links once Phase-A release ships (replace the
   "Coming soon" buttons).
 - Add the privacy policy / ToS page (LEGAL-01) — required once the storefront
