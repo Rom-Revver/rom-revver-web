@@ -23,8 +23,13 @@ the deploy workflow **creates `main` on its first run**, so do these in order:
 3. **Now** on `rom-revver-web`: **Settings → Pages → Deploy from a branch →
    `main` / root**. (The branch exists only after step 2.) Live at
    `https://rom-revver.github.io/rom-revver-web/`.
-4. Pick a domain (see WEB-01 in `BACKLOG.md`) and point it at Pages. Note:
-   `ezwedsites.ca` reads as a wedding-site brand; a fitting domain is recommended.
+4. Point **`romrevver.ca`** (bought 2026-08-16, registrar GoDaddy) at Pages —
+   **apex `A`/`AAAA` records** per GitHub Pages' custom-domain docs (a `CNAME`
+   is invalid at a zone apex; that form is only for a `www` host), plus a
+   `CNAME` *file* in the repo root naming the domain. The
+   same domain is the Cakemail sending domain for licence keys, so its DNS also
+   carries SPF/DKIM/DMARC — see
+   `docs/monetization/key-delivery-architecture.md`.
    *(A cleaner URL — `https://rom-revver.github.io/` — is possible if the repo is
    renamed `rom-revver.github.io`.)*
 
