@@ -26,12 +26,31 @@ the deploy workflow **creates `main` on its first run**, so do these in order:
 4. Point **`romrevver.ca`** (bought 2026-08-16, registrar GoDaddy) at Pages —
    **apex `A`/`AAAA` records** per GitHub Pages' custom-domain docs (a `CNAME`
    is invalid at a zone apex; that form is only for a `www` host), plus a
-   `CNAME` *file* in the repo root naming the domain. The
+   `CNAME` *file* naming the domain. The
    same domain is the Cakemail sending domain for licence keys, so its DNS also
    carries SPF/DKIM/DMARC — see
    `docs/monetization/key-delivery-architecture.md`.
    *(A cleaner URL — `https://rom-revver.github.io/` — is possible if the repo is
    renamed `rom-revver.github.io`.)*
+
+> **⚠ Steps 3–4 describe the PLAN, and the live site does NOT follow it
+> (verified 2026-08-24).** What serves `https://romrevver.ca` today carries
+> **no GitHub/Fastly origin fingerprints** (no `x-github-request-id`, no
+> `via: varnish` — the `github.io` URL has both), the Pages API for
+> `rom-revver-web` reports `cname: null`, and no `CNAME` file exists in that
+> branch — yet the apex serves. **What it serves is a GoDaddy Website Builder
+> site** (review, 2026-08-24: `x-siteid: us-east-1`, a `dps_site_id` GoDaddy
+> cookie, a GoDaddy CSP, and
+> `<meta name="generator" content="…Go Daddy Website Builder…">` in the body)
+> — the registrar's own product, behind Cloudflare's proxy. **That means THIS
+> directory's site — including its Stripe checkout link — is NOT what the
+> public sees at `romrevver.ca`**; it is reachable only at the `github.io`
+> URL, which nothing points to. See the BACKLOG item. During the
+> 2026-08-23/24 apex outage (provider-side; it resolved with **no repo
+> change**) an agent concluded the missing-CNAME/GH-Pages story and shipped
+> `web/CNAME` — wrong, reverted, deploy cancelled before it bound anything.
+> **Do not "fix" an apex outage from this README's plan**: first fingerprint
+> the origin (`curl -sI https://romrevver.ca | grep -iE 'x-github|x-siteid'`).
 
 ## Before public launch
 
