@@ -6,13 +6,13 @@
     <title>ROM Revver — a modern ECU calibration editor</title>
     <meta
       name="description"
-      content="ROM Revver is a modern, visual, offline-first calibration editor for open ECU tuning — RomRaider &amp; ECUFlash definitions, fast table editing, 3D visualization, and a workflow that stays out of your way. In development · private beta."
+      content="A ROM editor for the definitions you already tune with. RomRaider and ECUFlash formats, table editing with full undo, 3D views, offline-first, careful with your files. In development · private beta."
     />
     <meta name="theme-color" content="#0a0b0f" />
     <meta property="og:title" content="ROM Revver — a modern ECU calibration editor" />
     <meta
       property="og:description"
-      content="The open tuning workflow you know, rebuilt to be fast, visual, and trustworthy. In development · private beta."
+      content="A ROM editor for the definitions you already tune with. RomRaider and ECUFlash formats, offline-first, careful with your files. In development · private beta."
     />
     <meta property="og:type" content="website" />
     <style>
@@ -613,10 +613,10 @@
             ></i
             >&nbsp;<b>In development</b> · currently in private beta testing</span
           >
-          <h1>The open tuning workflow, <span class="grad-text">rebuilt</span>.</h1>
+          <h1>Made for the maps you <span class="grad-text">already tune</span>.</h1>
           <p class="lede">
-            ROM Revver is a modern calibration editor for enthusiast ECU tuning — the definitions
-            and workflow you already know, made fast, visual, and hard to break.
+            ROM Revver opens the RomRaider- and ECUFlash-format definitions you already use. Find
+            the table, change the numbers, see exactly what moved, and export a file you can trust.
           </p>
           <div class="cta">
             <button class="btn btn-soon" disabled>
@@ -649,15 +649,13 @@
       <section class="mission">
         <div class="wrap">
           <p>
-            Free, open tuning tools proved what's possible. ROM Revver's mission is to give that
-            community a calibration editor that feels
-            <span class="grad-text">as good as the cars it tunes</span> — quick to navigate,
-            genuinely pleasant to use, and safe by construction.
+            Free tools proved open tuning works. ROM Revver is the
+            <span class="grad-text">editor half</span> of that toolchain, rebuilt for daily use:
+            quick to search, clear to read, and strict about never corrupting a file.
           </p>
           <p class="sub">
-            It reads RomRaider- and ECUFlash-format definitions, so your existing knowledge and
-            files come with you. Reading and flashing stay with the community's proven tools — ROM
-            Revver is the editor in the middle, reimagined.
+            Your existing definition files load as-is. Reading and flashing stay with the tools you
+            already trust; ROM Revver is the editor between them.
           </p>
         </div>
       </section>
@@ -666,57 +664,59 @@
       <section id="features">
         <div class="wrap">
           <div class="sec-head">
-            <span class="eyebrow">Built for real tuning</span>
-            <h2>Everything you need to shape a calibration</h2>
-            <p>Dense, fast, and visual — with the safety rails that keep a flash correct.</p>
+            <span class="eyebrow">What it does</span>
+            <h2>Open a ROM, find the map, change it, export it</h2>
+            <p>Fast to navigate, precise to edit, and careful with every byte it writes.</p>
           </div>
           <div class="grid">
             <div class="card">
               <div class="ic">⚡</div>
               <h3>Fast table editing</h3>
               <p>
-                Select, type, increment, interpolate, and paste across a dense, searchable table
-                tree. Full undo/redo on every change.
+                Type a value, bump it with + and −, set or scale a whole selection, interpolate a
+                range, paste from a spreadsheet. Undo anything.
               </p>
             </div>
             <div class="card">
               <div class="ic">🧊</div>
               <h3>2D &amp; 3D visualization</h3>
               <p>
-                See any map as a scaled grid, a heatmap, or an interactive 3D surface — and watch it
-                update live as you edit.
+                Any map as a scaled grid, a heatmap across the whole workspace, or a 3D surface you
+                can rotate. It updates as you type.
               </p>
             </div>
             <div class="card">
               <div class="ic">🔀</div>
               <h3>Compare &amp; diff</h3>
               <p>
-                Load other ROMs as baselines, see per-cell deltas inline, and copy values straight
-                from a comparison — byte-exact.
+                Load other same-calibration ROMs beside yours. Differing cells get a marker,
+                hovering shows each baseline's value and the delta, and you can copy a value across
+                byte-for-byte.
               </p>
             </div>
             <div class="card">
               <div class="ic">🛡️</div>
               <h3>Safe by construction</h3>
               <p>
-                Your original file is never touched. Bytes are never written without a recalculated,
-                verified checksum. Every edit is reversible.
+                The original file is never modified in place, and a save it can't verify is refused
+                — it never writes a stale or wrong checksum. Every change is listed, diffable, and
+                reversible.
               </p>
             </div>
             <div class="card">
               <div class="ic">🧩</div>
               <h3>Plugins, no code</h3>
               <p>
-                Extend the app with declarative plugins — panels, notes, and reversible, previewable
-                mods. Nothing runs silently.
+                Panels, notes, and reversible mods from plain declarative files. You see what a
+                plugin touches before it runs; plugins never execute code.
               </p>
             </div>
             <div class="card">
               <div class="ic">🚗</div>
               <h3>Multi-platform</h3>
               <p>
-                Mazda RX-8 today; Mitsubishi Evo support built in; Nissan on the way. You supply the
-                definitions — they're never bundled.
+                Mazda RX-8 today, Mitsubishi Evo built in. You supply the ROM and the definitions;
+                nothing is bundled.
               </p>
             </div>
           </div>
@@ -727,11 +727,11 @@
       <section id="pricing" class="mission" style="border-bottom: none">
         <div class="wrap" style="max-width: var(--maxw)">
           <div class="sec-head">
-            <span class="eyebrow">Simple, honest pricing</span>
+            <span class="eyebrow">Pricing</span>
             <h2>One free edition. One small, one-time upgrade.</h2>
             <p>
-              Everything you need to tune is free forever. Pro adds productivity and intelligence —
-              bought once, yours to keep.
+              Tuning is free, forever. Pro adds projects, the AI assistant, and premium plugins —
+              bought once, yours for good.
             </p>
           </div>
           <div class="prices">
@@ -824,8 +824,8 @@
                       stroke-linejoin="round"
                     /></svg
                   ><span
-                    ><b>Projects</b> — save your workspace, name tables &amp; axes, revision history
-                    &amp; reports</span
+                    ><b>Projects</b> — save your workspace, name tables &amp; axes, export workspace
+                    reports</span
                   >
                 </li>
                 <li>
@@ -851,7 +851,7 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     /></svg
-                  ><span><b>Premium plugins</b> — advanced compare, datalog pivots &amp; more</span>
+                  ><span><b>Premium plugins</b> — the datalog pivot table today, more planned</span>
                 </li>
                 <li>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -902,8 +902,8 @@
             <span class="eyebrow">Where we are</span>
             <h2 style="margin-top: 12px">In active development &amp; private beta</h2>
             <p>
-              ROM Revver is being built in the open with a small group of beta testers from the
-              tuning community. Public downloads aren't available yet — but they're coming.
+              ROM Revver is in active development with a small group of beta testers from the tuning
+              community. Public downloads aren't available yet.
             </p>
             <div class="steps">
               <div class="step done"><span class="b"></span>Core editor</div>
