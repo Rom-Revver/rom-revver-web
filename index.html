@@ -3,16 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ROM Revver — a modern ECU calibration editor</title>
+    <title>ROM Revver: a modern ECU calibration editor</title>
     <meta
       name="description"
-      content="A ROM editor for the definitions you already tune with. RomRaider and ECUFlash formats, table editing with full undo, 3D views, offline-first, careful with your files. In development · private beta."
+      content="A calibration editor for the RomRaider and ECUFlash definitions you already have. In development · private beta."
     />
     <meta name="theme-color" content="#0a0b0f" />
-    <meta property="og:title" content="ROM Revver — a modern ECU calibration editor" />
+    <meta property="og:title" content="ROM Revver: a modern ECU calibration editor" />
     <meta
       property="og:description"
-      content="A ROM editor for the definitions you already tune with. RomRaider and ECUFlash formats, offline-first, careful with your files. In development · private beta."
+      content="A calibration editor for the RomRaider and ECUFlash definitions you already have. In development · private beta."
     />
     <meta property="og:type" content="website" />
     <style>
@@ -632,7 +632,7 @@
           <div class="frame">
             <div class="frame-bar">
               <span></span><span></span><span></span
-              ><span class="cap">ROM Revver — a live RX-8 workspace</span>
+              ><span class="cap">ROM Revver showing a live RX-8 workspace</span>
             </div>
             <img
               src="assets/shot-hero.png"
@@ -649,13 +649,13 @@
       <section class="mission">
         <div class="wrap">
           <p>
-            Free tools proved open tuning works. ROM Revver is the
-            <span class="grad-text">editor half</span> of that toolchain, rebuilt for daily use:
-            quick to search, clear to read, and strict about never corrupting a file.
+            Free tools proved that open tuning works. ROM Revver rebuilds the
+            <span class="grad-text">editor half</span> of that toolchain for daily use. It is quick
+            to search, clear to read, and strict about never corrupting a file.
           </p>
           <p class="sub">
-            Your existing definition files load as-is. Reading and flashing stay with the tools you
-            already trust; ROM Revver is the editor between them.
+            Your existing definition files load as they are. Reading and flashing stay with the
+            tools you already trust, and ROM Revver is the editor that sits between them.
           </p>
         </div>
       </section>
@@ -665,7 +665,7 @@
         <div class="wrap">
           <div class="sec-head">
             <span class="eyebrow">What it does</span>
-            <h2>Open a ROM, find the map, change it, export it</h2>
+            <h2>Everything between opening a ROM and flashing it</h2>
             <p>Fast to navigate, precise to edit, and careful with every byte it writes.</p>
           </div>
           <div class="grid">
@@ -673,16 +673,17 @@
               <div class="ic">⚡</div>
               <h3>Fast table editing</h3>
               <p>
-                Type a value, bump it with + and −, set or scale a whole selection, interpolate a
-                range, paste from a spreadsheet. Undo anything.
+                Type a value, nudge it up or down, set or scale a whole selection, interpolate
+                across a range, or paste straight from a spreadsheet. Anything you change can be
+                undone.
               </p>
             </div>
             <div class="card">
               <div class="ic">🧊</div>
               <h3>2D &amp; 3D visualization</h3>
               <p>
-                Any map as a scaled grid, a heatmap across the whole workspace, or a 3D surface you
-                can rotate. It updates as you type.
+                See any map as a scaled grid, as a heatmap across the whole workspace, or as a 3D
+                surface you can rotate. Everything updates as you type.
               </p>
             </div>
             <div class="card">
@@ -698,24 +699,24 @@
               <div class="ic">🛡️</div>
               <h3>Safe by construction</h3>
               <p>
-                The original file is never modified in place, and a save it can't verify is refused
-                — it never writes a stale or wrong checksum. Every change is listed, diffable, and
-                reversible.
+                The original file is never modified in place, and a save that can't be verified is
+                refused rather than written with a wrong checksum. Every change is listed, diffable,
+                and reversible.
               </p>
             </div>
             <div class="card">
               <div class="ic">🧩</div>
               <h3>Plugins, no code</h3>
               <p>
-                Panels, notes, and reversible mods from plain declarative files. You see what a
-                plugin touches before it runs; plugins never execute code.
+                Panels, notes, and reversible mods come from plain declarative files. You see what a
+                plugin touches before it runs, and plugins never execute code.
               </p>
             </div>
             <div class="card">
               <div class="ic">🚗</div>
               <h3>Multi-platform</h3>
               <p>
-                Mazda RX-8 today, Mitsubishi Evo built in. You supply the ROM and the definitions;
+                Mazda RX-8 and Mitsubishi Evo today. You supply the ROM and the definitions, and
                 nothing is bundled.
               </p>
             </div>
@@ -730,8 +731,8 @@
             <span class="eyebrow">Pricing</span>
             <h2>One free edition. One small, one-time upgrade.</h2>
             <p>
-              Tuning is free, forever. Pro adds projects, the AI assistant, and premium plugins —
-              bought once, yours for good.
+              Tuning is free, forever. Pro adds projects, the AI assistant, and premium plugins. You
+              buy it once and it stays yours.
             </p>
           </div>
           <div class="prices">
@@ -760,7 +761,9 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     /></svg
-                  ><span><b>Export ROM</b> — base + your edits → a new binary</span>
+                  ><span
+                    ><b>Export ROM</b> writes your base file plus your edits to a new binary</span
+                  >
                 </li>
                 <li>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -782,7 +785,7 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     /></svg
-                  ><span><b>All safety behaviour</b> — checksums &amp; write-guards</span>
+                  ><span><b>All safety behaviour</b>, including checksums and write guards</span>
                 </li>
                 <li>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -824,7 +827,7 @@
                       stroke-linejoin="round"
                     /></svg
                   ><span
-                    ><b>Projects</b> — save your workspace, name tables &amp; axes, export workspace
+                    ><b>Projects</b>: save your workspace, name tables and axes, export workspace
                     reports</span
                   >
                 </li>
@@ -838,7 +841,7 @@
                       stroke-linejoin="round"
                     /></svg
                   ><span
-                    ><b>AI assistant</b> — bring your own provider; reasons over your
+                    ><b>AI assistant</b>: bring your own provider and let it reason over your
                     workspace</span
                   >
                 </li>
@@ -851,7 +854,9 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     /></svg
-                  ><span><b>Premium plugins</b> — the datalog pivot table today, more planned</span>
+                  ><span
+                    ><b>Premium plugins</b>: the datalog pivot table today, with more planned</span
+                  >
                 </li>
                 <li>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -862,7 +867,7 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     /></svg
-                  ><span>One binary, no server — your license works offline, forever</span>
+                  ><span>One binary and no server. Your license works offline, forever</span>
                 </li>
               </ul>
               <a
@@ -871,7 +876,7 @@
                 href="https://buy.stripe.com/00weVc7mQbU53ZXeqx0Ny00"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Buy Pro — $20 →</a
+                >Buy Pro for $20 →</a
               >
               <p
                 style="
@@ -882,8 +887,8 @@
                   line-height: 1.5;
                 "
               >
-                <b style="color: var(--ink)">Private beta — read before buying.</b> ROM Revver isn't
-                publicly downloadable yet; builds go to registered beta testers only. Your licence
+                <b style="color: var(--ink)">Private beta. Read before buying.</b> ROM Revver isn't
+                publicly downloadable yet. Builds go to registered beta testers only. Your licence
                 key is emailed to you automatically after checkout and unlocks Pro once you have a
                 build. If you're not already a tester, hold off until public release.
               </p>
@@ -923,10 +928,10 @@
               >
             </div>
             <p class="cta-note">
-              That releases page is <b>restricted to registered beta testers</b> — it's a private
-              GitHub repo, so if you're not on the beta you'll get GitHub's 404 there, not a broken
-              link. Testers get access as part of joining the private beta; public downloads will
-              live here once ROM Revver ships.
+              That releases page is <b>restricted to registered beta testers</b>. It's a private
+              GitHub repo, so if you're not on the beta you'll get GitHub's 404 there rather than a
+              broken link. Testers get access as part of joining the private beta, and public
+              downloads will live here once ROM Revver ships.
             </p>
           </div>
         </div>
@@ -943,11 +948,11 @@
         </div>
         <div class="disclaimer">
           <b>At your own risk.</b> Editing engine firmware can damage hardware. ROM Revver is
-          provided with no warranty; you are responsible for anything you flash to a vehicle.
+          provided with no warranty, and you are responsible for anything you flash to a vehicle.
           Reading and flashing ECUs are handled by the community's separate tools.
         </div>
         <div class="foot-legal">
-          <div>Proprietary — © 2026 Ethan Melamed. All rights reserved.</div>
+          <div>Proprietary. © 2026 Ethan Melamed. All rights reserved.</div>
           <div>
             Not affiliated with or endorsed by RomRaider, Mazda, Mitsubishi, or Nissan. Definitions
             are user-supplied and never bundled.
