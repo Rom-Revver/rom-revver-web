@@ -6,13 +6,13 @@
     <title>ROM Revver: a modern ECU calibration editor</title>
     <meta
       name="description"
-      content="The open tuning workflow, rebuilt. Supports RomRaider and ECUFlash definitions. In development · private beta."
+      content="The open tuning workflow, rebuilt. Supports RomRaider and ECUFlash definitions. In active development."
     />
     <meta name="theme-color" content="#0a0b0f" />
     <meta property="og:title" content="ROM Revver: a modern ECU calibration editor" />
     <meta
       property="og:description"
-      content="The open tuning workflow, rebuilt. Supports RomRaider and ECUFlash definitions. In development · private beta."
+      content="The open tuning workflow, rebuilt. Supports RomRaider and ECUFlash definitions. In active development."
     />
     <meta property="og:type" content="website" />
     <style>
@@ -207,24 +207,6 @@
         background: var(--panel);
         border-color: var(--ink-3);
       }
-      .btn-soon {
-        background: var(--panel-2);
-        color: var(--ink-2);
-        border-color: var(--line);
-        cursor: not-allowed;
-        position: relative;
-      }
-      .btn-soon .tag {
-        font-size: 0.68rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        font-weight: 700;
-        color: #0a0b12;
-        background: var(--grad);
-        padding: 2px 7px;
-        border-radius: 6px;
-      }
-
       /* ---- hero ---- */
       .hero {
         padding: 74px 0 40px;
@@ -592,7 +574,7 @@
           <a href="#features">Features</a>
           <a href="#pricing">Pricing</a>
           <a href="#status">Status</a>
-          <span class="status-dot"><i></i>Private beta</span>
+          <span class="status-dot"><i></i>In development</span>
         </nav>
       </div>
     </header>
@@ -611,7 +593,7 @@
                 display: inline-block;
               "
             ></i
-            >&nbsp;<b>In development</b> · currently in private beta testing</span
+            >&nbsp;<b>In development</b> · now publicly available</span
           >
           <h1>The open tuning workflow, <span class="grad-text">rebuilt</span>.</h1>
           <p class="lede">
@@ -798,6 +780,12 @@
                   ><span>Fully offline</span>
                 </li>
               </ul>
+              <a
+                class="btn btn-ghost"
+                style="width: 100%; justify-content: center; margin-top: 22px"
+                href="/download"
+                >Download for free →</a
+              >
             </div>
             <div class="price pro">
               <div class="badge">Pro</div>
@@ -886,16 +874,14 @@
                   line-height: 1.5;
                 "
               >
-                <b style="color: var(--ink)">Private beta. Read before buying.</b> ROM Revver isn't
-                publicly downloadable yet. Builds go to registered beta testers only. Your licence
-                key is emailed to you automatically after checkout and unlocks Pro once you have a
-                build. If you're not already a tester, hold off until public release.
+                <b style="color: var(--ink)">Read before buying.</b> Your licence key is emailed to
+                you automatically after checkout and unlocks Pro once you enter it in the app. Not
+                sure yet?
+                <a href="/download" style="text-decoration: underline">Grab the free download</a>
+                and try it first.
               </p>
             </div>
           </div>
-          <p style="text-align: center; color: var(--ink-3); font-size: 0.86rem; margin-top: 24px">
-            Pricing is provisional and will be confirmed at launch.
-          </p>
         </div>
       </section>
 
@@ -904,33 +890,22 @@
         <div class="wrap">
           <div class="status">
             <span class="eyebrow">Where we are</span>
-            <h2 style="margin-top: 12px">In active development &amp; private beta</h2>
+            <h2 style="margin-top: 12px">In active development · publicly available</h2>
             <p>
-              ROM Revver is in active development with a small group of beta testers from the tuning
-              community. Public downloads aren't available yet.
+              ROM Revver is in active development, and it's open to everyone now. Grab the current
+              build below.
             </p>
             <div class="steps">
               <div class="step done"><span class="b"></span>Core editor</div>
-              <div class="step now"><span class="b"></span>Private beta</div>
-              <div class="step"><span class="b"></span>Public release</div>
+              <div class="step done"><span class="b"></span>Private beta</div>
+              <div class="step now"><span class="b"></span>Public release</div>
             </div>
             <div class="cta" style="margin-top: 32px">
-              <button class="btn btn-soon" disabled>
-                Download <span class="tag">Coming soon</span>
-              </button>
-              <a
-                class="btn btn-ghost"
-                href="https://github.com/Rom-Revver/rom-revver-releases/releases"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Beta tester releases →</a
-              >
+              <a class="btn btn-primary" href="/download">Download</a>
             </div>
             <p class="cta-note">
-              That releases page is <b>restricted to registered beta testers</b>. It's a private
-              GitHub repo, so if you're not on the beta you'll get GitHub's 404 there rather than a
-              broken link. Testers get access as part of joining the private beta, and public
-              downloads will live here once ROM Revver ships.
+              Every release ships with its changelog and test report right there on the
+              <a href="/download">download page</a>.
             </p>
           </div>
         </div>
@@ -942,7 +917,7 @@
         <div class="foot-top">
           <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span>ROM Revver</a>
           <div style="max-width: 44ch">
-            A modern calibration editor for open ECU tuning. In development · private beta.
+            A modern calibration editor for open ECU tuning. In active development.
           </div>
         </div>
         <div class="disclaimer">
