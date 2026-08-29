@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Download ROM Revver</title>
+    <meta
+      name="description"
+      content="Download ROM Revver for macOS, Windows, and Linux. Free to use, with the latest changelog and test report."
+    />
+    <meta name="theme-color" content="#0a0b0f" />
+    <meta property="og:title" content="Download ROM Revver" />
+    <meta
+      property="og:description"
+      content="Download ROM Revver for macOS, Windows, and Linux. Free to use, with the latest changelog and test report."
+    />
+    <meta property="og:type" content="website" />
+    <style>
+      :root {
+        --bg: #0a0b0f;
+        --bg-2: #0d0f15;
+        --panel: #12141c;
+        --panel-2: #161925;
+        --line: rgba(255, 255, 255, 0.09);
+        --line-2: rgba(255, 255, 255, 0.14);
+        --ink: #e8eaf0;
+        --ink-2: #aab1c0;
+        --ink-3: #79808f;
+        --accent: #7c6cff;
+        --good: #37d39b;
+        --bad: #ff6a6a;
+        --grad: linear-gradient(120deg, #8f7bff 0%, #5b8bff 55%, #37c3ff 100%);
+        --radius: 16px;
+        --maxw: 860px;
+        --font:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
+          'Apple Color Emoji', 'Segoe UI Emoji', sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: var(--font);
+        line-height: 1.55;
+        -webkit-font-smoothing: antialiased;
+      }
+      a {
+        color: inherit;
+      }
+      .wrap {
+        max-width: var(--maxw);
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .eyebrow {
+        font-size: 0.78rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--ink-3);
+        font-weight: 600;
+      }
+      header.nav {
+        border-bottom: 1px solid var(--line);
+      }
+      .nav-in {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        height: 64px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        font-size: 1.06rem;
+        text-decoration: none;
+      }
+      .mark {
+        width: 26px;
+        height: 26px;
+        border-radius: 7px;
+        background: var(--grad);
+        flex: none;
+      }
+      .nav-back {
+        margin-left: auto;
+        font-size: 0.9rem;
+        color: var(--ink-2);
+        text-decoration: none;
+      }
+      .nav-back:hover {
+        color: var(--ink);
+      }
+      main {
+        padding: 56px 0 80px;
+      }
+      h1 {
+        font-size: clamp(2rem, 4vw, 2.6rem);
+        letter-spacing: -0.02em;
+        margin: 10px 0 14px;
+      }
+      h2 {
+        font-size: 1.3rem;
+        letter-spacing: -0.01em;
+        margin: 0 0 14px;
+      }
+      .lede {
+        color: var(--ink-2);
+        font-size: 1.05rem;
+        max-width: 56ch;
+        margin: 0 0 22px;
+      }
+      #version-line {
+        color: var(--ink-2);
+        font-size: 0.95rem;
+        margin: 0 0 22px;
+      }
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 12px 20px;
+        border-radius: 11px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .btn-primary {
+        background: var(--grad);
+        color: #0a0b12;
+      }
+      .btn-ghost {
+        border-color: var(--line-2);
+        color: var(--ink);
+      }
+      .cta-note {
+        color: var(--ink-3);
+        font-size: 0.88rem;
+      }
+      section {
+        padding: 36px 0;
+        border-top: 1px solid var(--line);
+      }
+      .card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 24px;
+      }
+      #changelog-body ul {
+        margin: 0;
+        padding-left: 1.2em;
+      }
+      #changelog-body li {
+        margin: 6px 0;
+      }
+      #changelog-body b {
+        color: var(--ink);
+      }
+      footer {
+        border-top: 1px solid var(--line);
+        padding: 28px 0;
+        color: var(--ink-3);
+        font-size: 0.85rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="wrap nav-in">
+        <a class="brand" href="/"><span class="mark" aria-hidden="true"></span>ROM Revver</a>
+        <a class="nav-back" href="/">Back to romrevver.ca</a>
+      </div>
+    </header>
+
+    <main>
+      <section style="border-top: none; padding-top: 0">
+        <div class="wrap">
+          <span class="eyebrow">Download</span>
+          <h1>Get ROM Revver</h1>
+          <p class="lede">
+            Free to use on macOS, Windows, and Linux. A Pro license unlocks extra tools inside the
+            app. It never gates the download.
+          </p>
+          <p id="version-line">Loading the latest release&hellip;</p>
+          <div class="cta" id="download-buttons"></div>
+          <p class="cta-note" id="fallback-note" hidden>
+            Downloads aren't live yet. If you're a registered beta tester, get the current build
+            from the
+            <a
+              href="https://github.com/Rom-Revver/rom-revver-releases/releases"
+              target="_blank"
+              rel="noopener noreferrer"
+              >releases page</a
+            >.
+          </p>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2>What's in this release</h2>
+          <div class="card" id="changelog-body">Loading&hellip;</div>
+        </div>
+      </section>
+
+      <section>
+        <div class="wrap">
+          <h2>Verified before it shipped</h2>
+          <p class="lede" style="margin-bottom: 10px">
+            Every release runs the full automated test suite before it's built.
+          </p>
+          <div class="cta">
+            <a id="test-report-link" class="btn btn-ghost" href="#" hidden>Read the test report</a>
+            <a id="sha-link" class="btn btn-ghost" href="#" hidden>Checksums (SHA-256)</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <div>Proprietary. &copy; 2026 Ethan Melamed. All rights reserved.</div>
+        <div>
+          Not affiliated with or endorsed by RomRaider, Mazda, Mitsubishi, or Nissan. Definitions
+          are user-supplied and never bundled.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        // The only off-host request this page makes: the public downloads
+        // mirror. R2 holds ONLY the current release (docs/downloads-r2-setup.md),
+        // so this always resolves to whatever the owner most recently shipped.
+        var BASE = 'https://downloads.romrevver.ca/latest/';
+        var LABELS = {
+          macos: 'macOS',
+          windows: 'Windows',
+          linuxDeb: 'Linux (.deb)',
+          linuxRpm: 'Linux (.rpm)',
+        };
+
+        function escapeHtml(s) {
+          return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        function inlineMd(s) {
+          return escapeHtml(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
+        }
+
+        // Minimal renderer for this project's disciplined changelog format: a
+        // "## v..." heading (skipped here, the version line above already
+        // shows it), "- " bullets, and "**bold**" lead-ins. No markdown
+        // library, matching this site's dependency-free style.
+        function renderChangelog(md) {
+          var lines = md.split('\n');
+          var html = [];
+          var inList = false;
+          lines.forEach(function (line) {
+            var bullet = line.match(/^-\s+(.*)$/);
+            if (bullet) {
+              if (!inList) {
+                html.push('<ul>');
+                inList = true;
+              }
+              html.push('<li>' + inlineMd(bullet[1]) + '</li>');
+              return;
+            }
+            if (inList) {
+              html.push('</ul>');
+              inList = false;
+            }
+            if (/^##\s+/.test(line) || !line.trim()) return;
+            html.push('<p>' + inlineMd(line.trim()) + '</p>');
+          });
+          if (inList) html.push('</ul>');
+          document.getElementById('changelog-body').innerHTML = html.join('\n') || 'No notes yet.';
+        }
+
+        function renderManifest(manifest) {
+          document.getElementById('version-line').textContent =
+            'Version ' + manifest.version + ', released ' + manifest.date;
+
+          var buttons = document.getElementById('download-buttons');
+          Object.keys(LABELS).forEach(function (key) {
+            var platform = manifest.platforms[key];
+            if (!platform) return;
+            var a = document.createElement('a');
+            a.className = 'btn btn-primary';
+            a.href = BASE + platform.key.replace(/^latest\//, '');
+            a.rel = 'noopener noreferrer';
+            a.textContent = 'Download for ' + LABELS[key];
+            buttons.appendChild(a);
+          });
+
+          var reportLink = document.getElementById('test-report-link');
+          reportLink.href = BASE + 'test-report.md';
+          reportLink.hidden = false;
+          var shaLink = document.getElementById('sha-link');
+          shaLink.href = BASE + 'SHA256SUMS.txt';
+          shaLink.hidden = false;
+
+          fetch(BASE + 'changelog.md', { cache: 'no-store' })
+            .then(function (r) {
+              return r.text();
+            })
+            .then(renderChangelog)
+            .catch(function () {
+              document.getElementById('changelog-body').textContent =
+                'The changelog for this release could not be loaded.';
+            });
+        }
+
+        fetch(BASE + 'version.json', { cache: 'no-store' })
+          .then(function (r) {
+            if (!r.ok) throw new Error('manifest fetch failed: ' + r.status);
+            return r.json();
+          })
+          .then(renderManifest)
+          .catch(function () {
+            document.getElementById('version-line').textContent =
+              'The latest release info is unavailable right now.';
+            document.getElementById('fallback-note').hidden = false;
+            document.getElementById('changelog-body').textContent =
+              'The changelog for this release could not be loaded.';
+          });
+      })();
+    </script>
+  </body>
+</html>
