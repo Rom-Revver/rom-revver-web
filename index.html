@@ -443,6 +443,28 @@
         font-weight: 500;
         color: var(--ink-3);
       }
+      .price .amt-was {
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: var(--ink-3);
+        text-decoration: line-through;
+        margin-top: 14px;
+      }
+      .price .amt-was + .amt {
+        margin-top: 2px;
+      }
+      .price .launch-tag {
+        display: inline-block;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: var(--accent);
+        background: color-mix(in srgb, var(--accent) 16%, transparent);
+        padding: 3px 8px;
+        border-radius: 6px;
+        margin-bottom: 6px;
+      }
       .price .terms {
         color: var(--ink-3);
         font-size: 0.86rem;
@@ -790,7 +812,9 @@
             <div class="price pro">
               <div class="badge">Pro</div>
               <div class="name">Pro</div>
-              <div class="amt">$20 <small>one-time (USD)</small></div>
+              <div class="amt-was"><s id="pro-amt-was">$55</s></div>
+              <div class="amt" id="pro-amt">$27.50 <small>CAD, one-time</small></div>
+              <div class="launch-tag">Launch price · 50% off</div>
               <div class="terms">Perpetual license · every future update included, forever.</div>
               <ul>
                 <li>
@@ -860,10 +884,10 @@
               <a
                 class="btn btn-primary"
                 style="width: 100%; justify-content: center; margin-top: 22px"
-                href="https://buy.stripe.com/00weVc7mQbU53ZXeqx0Ny00"
+                href="https://buy.stripe.com/00w28q4aE1fr8gdbel0Ny02"
                 target="_blank"
                 rel="noopener noreferrer"
-                >Buy Pro for $20 →</a
+                >Buy Pro →</a
               >
               <p
                 style="
@@ -934,5 +958,25 @@
         </div>
       </div>
     </footer>
+    <script>
+      (function () {
+        var wasEl = document.getElementById('pro-amt-was');
+        var amtEl = document.getElementById('pro-amt');
+        if (!wasEl || !amtEl) return;
+        function showUsd() {
+          wasEl.textContent = '$40';
+          amtEl.innerHTML = '$20 <small>USD, one-time</small>';
+        }
+        fetch('/cdn-cgi/trace')
+          .then(function (res) {
+            return res.text();
+          })
+          .then(function (text) {
+            var match = text.match(/^loc=([A-Z]{2})$/m);
+            if (match && match[1] === 'US') showUsd();
+          })
+          .catch(function () {});
+      })();
+    </script>
   </body>
 </html>
