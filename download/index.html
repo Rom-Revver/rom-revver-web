@@ -234,104 +234,63 @@
       </div>
     </footer>
 
-    <script>
-      (function () {
-        // The only off-host request this page makes: the public downloads
-        // mirror. R2 holds ONLY the current release (docs/downloads-r2-setup.md),
-        // so this always resolves to whatever the owner most recently shipped.
-        var BASE = 'https://downloads.romrevver.ca/latest/';
-        var LABELS = {
-          macos: 'macOS',
-          windows: 'Windows',
-          linuxDeb: 'Linux (.deb)',
-          linuxRpm: 'Linux (.rpm)',
-        };
+    <script type="module">
+      import { buildDownloadView, changelogToHtml } from './render.js';
 
-        function escapeHtml(s) {
-          return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        }
+      // The only off-host request this page makes: the public downloads
+      // mirror. R2 holds ONLY the current release (docs/downloads-r2-setup.md),
+      // so this always resolves to whatever the owner most recently shipped.
+      var BASE = 'https://downloads.romrevver.ca/latest/';
 
-        function inlineMd(s) {
-          return escapeHtml(s).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>');
-        }
+      function renderChangelog(md) {
+        document.getElementById('changelog-body').innerHTML = changelogToHtml(md);
+      }
 
-        // Minimal renderer for this project's disciplined changelog format: a
-        // "## v..." heading (skipped here, the version line above already
-        // shows it), "- " bullets, and "**bold**" lead-ins. No markdown
-        // library, matching this site's dependency-free style.
-        function renderChangelog(md) {
-          var lines = md.split('\n');
-          var html = [];
-          var inList = false;
-          lines.forEach(function (line) {
-            var bullet = line.match(/^-\s+(.*)$/);
-            if (bullet) {
-              if (!inList) {
-                html.push('<ul>');
-                inList = true;
-              }
-              html.push('<li>' + inlineMd(bullet[1]) + '</li>');
-              return;
-            }
-            if (inList) {
-              html.push('</ul>');
-              inList = false;
-            }
-            if (/^##\s+/.test(line) || !line.trim()) return;
-            html.push('<p>' + inlineMd(line.trim()) + '</p>');
-          });
-          if (inList) html.push('</ul>');
-          document.getElementById('changelog-body').innerHTML = html.join('\n') || 'No notes yet.';
-        }
+      function renderManifest(manifest) {
+        var view = buildDownloadView(manifest, BASE);
+        document.getElementById('version-line').textContent = view.versionText;
 
-        function renderManifest(manifest) {
-          document.getElementById('version-line').textContent =
-            'Version ' + manifest.version + ', released ' + manifest.date;
+        var buttons = document.getElementById('download-buttons');
+        view.buttons.forEach(function (button) {
+          var a = document.createElement('a');
+          a.className = 'btn btn-primary';
+          a.href = button.href;
+          a.rel = 'noopener noreferrer';
+          a.textContent = button.label;
+          buttons.appendChild(a);
+        });
 
-          var buttons = document.getElementById('download-buttons');
-          Object.keys(LABELS).forEach(function (key) {
-            var platform = manifest.platforms[key];
-            if (!platform) return;
-            var a = document.createElement('a');
-            a.className = 'btn btn-primary';
-            a.href = BASE + platform.key.replace(/^latest\//, '');
-            a.rel = 'noopener noreferrer';
-            a.textContent = 'Download for ' + LABELS[key];
-            buttons.appendChild(a);
-          });
+        var reportLink = document.getElementById('test-report-link');
+        reportLink.href = view.testReportHref;
+        reportLink.hidden = false;
+        var shaLink = document.getElementById('sha-link');
+        shaLink.href = view.shaHref;
+        shaLink.hidden = false;
 
-          var reportLink = document.getElementById('test-report-link');
-          reportLink.href = BASE + 'test-report.md';
-          reportLink.hidden = false;
-          var shaLink = document.getElementById('sha-link');
-          shaLink.href = BASE + 'SHA256SUMS.txt';
-          shaLink.hidden = false;
-
-          fetch(BASE + 'changelog.md', { cache: 'no-store' })
-            .then(function (r) {
-              return r.text();
-            })
-            .then(renderChangelog)
-            .catch(function () {
-              document.getElementById('changelog-body').textContent =
-                'The changelog for this release could not be loaded.';
-            });
-        }
-
-        fetch(BASE + 'version.json', { cache: 'no-store' })
+        fetch(BASE + 'changelog.md', { cache: 'no-store' })
           .then(function (r) {
-            if (!r.ok) throw new Error('manifest fetch failed: ' + r.status);
-            return r.json();
+            return r.text();
           })
-          .then(renderManifest)
+          .then(renderChangelog)
           .catch(function () {
-            document.getElementById('version-line').textContent =
-              'The latest release info is unavailable right now.';
-            document.getElementById('fallback-note').hidden = false;
             document.getElementById('changelog-body').textContent =
               'The changelog for this release could not be loaded.';
           });
-      })();
+      }
+
+      fetch(BASE + 'version.json', { cache: 'no-store' })
+        .then(function (r) {
+          if (!r.ok) throw new Error('manifest fetch failed: ' + r.status);
+          return r.json();
+        })
+        .then(renderManifest)
+        .catch(function () {
+          document.getElementById('version-line').textContent =
+            'The latest release info is unavailable right now.';
+          document.getElementById('fallback-note').hidden = false;
+          document.getElementById('changelog-body').textContent =
+            'The changelog for this release could not be loaded.';
+        });
     </script>
   </body>
 </html>
